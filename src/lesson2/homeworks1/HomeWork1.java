@@ -2,7 +2,7 @@ package lesson2.homeworks1;
 
 import java.util.Arrays;
 import java.util.Scanner;
-import java.util.stream.Collectors;
+
 
 public class HomeWork1 {
     public static void main(String[] args) {
@@ -12,26 +12,19 @@ public class HomeWork1 {
         System.out.print("Enter number :");
         int number = scanner.nextInt();
         // Task 1
-
+        boolean flag = false;
         for (int j : array) {
             if (number == j) {
-                System.out.println("Ваше число есть в массиве");
-                break;
-            } else {
-                System.out.println("Вашего числа нет в массиве");
+                flag = true;
             }
-
-            boolean found = Arrays.stream(array).boxed().collect(Collectors.toSet()).contains(number);
-            if (found) {
-                System.out.println("Ваше число есть в массиве");
-            } else {
-                System.out.println("Вашего числа нет в массиве");
-            }
-
         }
+        System.out.println(flag == true ? "Ваше число есть в массиве " : "Вашего числа нет в массиве");
+
+
         System.out.println("");
         System.out.println(Arrays.toString(array));
 
     }
-
 }
+
+
