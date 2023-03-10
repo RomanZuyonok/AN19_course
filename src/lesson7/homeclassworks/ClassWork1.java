@@ -8,11 +8,21 @@ public class ClassWork1 {
 
         // task classwork number 1
         System.out.println("task classwork number 1");
-        DaysOfWeek.printStatusDays();
+        //DaysOfWeek.printStatusDays();
+        DaysOfWeek.printDays();
 
         // task classwork number 2
         System.out.println("task classwork number 2");
-        BaseConverter.convert(2.9);
+        Converter converter = new Converter();
+
+        converter.convertCelsius(2.5);
+        converter.convertKelvin(15.5);
+        converter.convertFahrenheit(25.0);
+
+        // task classwork number 2 - 2 ed.
+
+        System.out.println("kelvin = " + converter.getConvertKelvin(20) + "K ;   Fahrenheit = "
+                + converter.getConvertFahrenheit(35) + "F");
 
     }
 }
