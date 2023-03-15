@@ -19,6 +19,7 @@ public enum DaysOfWeek {
         return title;
     }
 
+
     @Override
     public String toString() {
         return "DaysOfWeek{" +
@@ -34,5 +35,6 @@ public enum DaysOfWeek {
                 System.out.println(daysOfWeek.getTitle() + " - it's a holiday");
             }
         }
+
     }
 }

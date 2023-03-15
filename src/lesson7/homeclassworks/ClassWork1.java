@@ -8,6 +8,7 @@ public class ClassWork1 {
 
         // task classwork number 1
         System.out.println("task classwork number 1");
+
         //DaysOfWeek.printStatusDays();
         DaysOfWeek.printDays();
 
@@ -23,6 +24,7 @@ public class ClassWork1 {
 
         System.out.println("kelvin = " + converter.getConvertKelvin(20) + "K ;   Fahrenheit = "
                 + converter.getConvertFahrenheit(35) + "F");
+
 
     }
 }
