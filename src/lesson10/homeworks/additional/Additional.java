@@ -44,19 +44,24 @@ public class Additional {
 
     public static void checkPalindrome(String string, int numberWord) {
         if (string != null && !string.isEmpty()) {
-            String reversWord = "";
+
             String[] arrayWords = string.split("\s");
             if (numberWord <= arrayWords.length) {
-                for (int i = 0; i < arrayWords[numberWord].length(); i++) {
-                    reversWord = arrayWords[numberWord].charAt(i) + reversWord;
-                }
-                if (arrayWords[numberWord].equalsIgnoreCase(reversWord)) {
-                    System.out.println(arrayWords[numberWord] + " <=> " + reversWord);
+                StringBuilder stringBuilder = new StringBuilder(arrayWords[numberWord]);
+                stringBuilder.reverse();
+                if (arrayWords[numberWord].equalsIgnoreCase(stringBuilder.toString())) {
+                    System.out.println(arrayWords[numberWord] + " <=> " + stringBuilder);
                 } else {
                     System.out.println(arrayWords[numberWord] + " not palindrome");
                 }
             }
-
+//                public static boolean isPalindrome(String text) {
+//                text = text.replaceAll("\\W","");//удаляем все ненужное
+//                StringBuilder strBuilder = new StringBuilder(text);
+//                strBuilder.reverse(); //переворачиваем строку
+//                String invertedText = strBuilder.toString();//присваиваем перевернутую строку
+//
+//                return text.equalsIgnoreCase(invertedText) ;//возвращаем сравнение двух строк вне зависимости от регистра
         } else {
             System.out.println("No word with that number!!!");
         }

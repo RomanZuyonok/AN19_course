@@ -5,16 +5,13 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Contract {
-    private String contractNumber;
-    private Scanner scanner = new Scanner(System.in);
-    private StringBuilder stringBuilder = new StringBuilder();
-    private Pattern pattern = Pattern.compile("-");
 
     public String inputNumberContract() {
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the contract number in the following sequence: xxxx-yyy-xxxx-yyy-xyxy");
         System.out.println("where x is a number and y is a letter!");
         System.out.print("Enter the contract number:");
-        contractNumber = scanner.next();
+        String contractNumber = scanner.next();
         String reg = "\\d{4}\\p{Punct}\\p{Alpha}{3}\\p{Punct}\\d{4}\\p{Punct}\\p{Alpha}{3}\\p{Punct}\\p{Alnum}{4}";
         // (contractNumber != null && !contractNumber.isEmpty())
         if (contractNumber != null && contractNumber.length() != 0) {
@@ -32,6 +29,7 @@ public class Contract {
     public void printBlockNumber(String contractNumber) {
         if (contractNumber != null) {
             String reg = "\\d{4}";
+            Pattern pattern = Pattern.compile("-");
             pattern = Pattern.compile(reg);
             Matcher matcher = pattern.matcher(contractNumber);
             while (matcher.find()) {
@@ -52,6 +50,7 @@ public class Contract {
 
     public void printUpperChar(String contractNumber) {
         if (contractNumber != null) {
+            StringBuilder stringBuilder = new StringBuilder();
             stringBuilder.delete(0, stringBuilder.length());
             String[] tempArray = contractNumber.split("-");
             System.out.print(stringBuilder.append(tempArray[1].toUpperCase()).append("/").append(tempArray[3].toUpperCase()).

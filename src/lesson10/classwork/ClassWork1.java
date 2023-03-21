@@ -3,18 +3,13 @@ package lesson10.classwork;
 import java.util.Scanner;
 
 public class ClassWork1 {
-    private Scanner scanner = new Scanner(System.in);
-
-    private int n;
-    private String[] strings;
-
-    private StringBuilder stringBuilder = new StringBuilder();
 
 
-    public String[] inputStr() {
+    public static String[] inputStr() {
+        Scanner scanner = new Scanner(System.in);
         System.out.print("Сколько строк планируете вводить?");
-        n = scanner.nextInt();
-        strings = new String[n];
+        int n = scanner.nextInt();
+        String[] strings = new String[n];
         for (int i = 0; i < n; i++) {
             System.out.println("Введите " + (i + 1) + " строку ->");
             strings[i] = scanner.next().toString();
@@ -25,12 +20,12 @@ public class ClassWork1 {
 
     }
 
-    public void maxMinPrint(String[] strings) {
+    public static void maxMinPrint(String[] strings) {
         int min = 0;
         int max = 0;
         int indexMin = 0;
         int indexMax = 0;
-        stringBuilder.delete(0, stringBuilder.length());
+        StringBuilder stringBuilder = new StringBuilder();
 
         if (strings != null) {
             min = strings[0].length();
@@ -53,7 +48,8 @@ public class ClassWork1 {
         }
     }
 
-    public void aboveAveragePrint(String[] strings) {
+    public static void aboveAveragePrint(String[] strings) {
+        StringBuilder stringBuilder = new StringBuilder();
         int average = 0;
         int allLeght = 0;
         stringBuilder.delete(0, stringBuilder.length());
@@ -73,8 +69,9 @@ public class ClassWork1 {
         }
     }
 
-    public void threeStringsPrint(String[] strings) {
+    public static void threeStringsPrint(String[] strings) {
         if (strings != null) {
+            StringBuilder stringBuilder = new StringBuilder();
             stringBuilder.delete(0, stringBuilder.length());
             if (strings.length >= 3) {
                 System.out.println(stringBuilder.append(strings[0]).append('\n')

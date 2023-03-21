@@ -9,26 +9,25 @@ public class Main {
         // class work
         System.out.println("Class work lesson 1");
 
-        ClassWork1 classWork1 = new ClassWork1();
 
-        String[] strings = classWork1.inputStr();
+        String[] strings = ClassWork1.inputStr();
 
-        classWork1.maxMinPrint(strings);
+        ClassWork1.maxMinPrint(strings);
 
         System.out.println("Class work lesson 2");
 
-       classWork1.aboveAveragePrint(strings);
+       ClassWork1.aboveAveragePrint(strings);
 
         System.out.println("Class work lesson 3");
 
-        classWork1.threeStringsPrint(strings);
+        ClassWork1.threeStringsPrint(strings);
 
         // homework base
 
         Contract contract = new Contract();
 
         String docNum ="1357-wed-5316-ghu-1d3w"; //for fast test
-        //String docNum = contract.inputNumberContract();
+//        String docNum = contract.inputNumberContract();
         contract.printBlockNumber(docNum);
         System.out.println();
         contract.replaceChars(docNum);
