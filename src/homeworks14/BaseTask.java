@@ -18,13 +18,10 @@ public class BaseTask {
 
         System.out.println('\n' + thread3.getName());
         thread3.start();
-        thread1.join();
-        thread2.join();
         thread3.join();
 
         System.out.println('\n' + thread2.getName());
         thread2.start();
-        thread1.join();
         thread2.join();
 
         System.out.println('\n' + thread1.getName());
